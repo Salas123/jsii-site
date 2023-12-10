@@ -9,7 +9,7 @@ const SocialIcons = () => {
     const DownloadResume  = async () => {
         console.log('Beginning document download...');
         alert('Downloading resume, please wait!');
-        const response = await fetch(process.env.PUBLIC_LAMBDA_GOOGLE_URL);
+        const response = await fetch(process.env.NEXT_PUBLIC_LAMBDA_GOOGLE_URL);
         const payload = JSON.parse(await response.json());
         const buff = Buffer.from(payload.buffer.data, 'binary');
 
