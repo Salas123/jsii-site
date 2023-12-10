@@ -1,0 +1,38 @@
+:root {
+  /*
+    root styles
+  */
+  background-color: #d3e1d8;
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  /*
+    section styles
+  */
+  --section-header-text-color: #5f61be;
+  --section-header-font-size: 50px;
+  --section-margin-top-spacing: 10px;
+  --section-margin-bottom-spacing: 10px;
+
+  /*
+    component styles
+  */
+  --section-divider-margin-top: 50px;
+  --section-divider-margin-bottom: 50px;
+  --section-divider-height: 50px;
+  --section-divider-padding: 15px;
+  --section-divider-font-weight: bold;
+  --section-divider-font-size: 80px;
+}
+
+svg{
+  height: 2em;
+  width: 2em;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 20px;
+}
+

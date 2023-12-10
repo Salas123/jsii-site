@@ -1,0 +1,127 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3em;
+  padding-right: 3em;
+  min-height: 100vh;
+}
+
+.introDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.initialHeaderText{
+  font-size: 5em;
+  margin-top: 10px;
+  color: var(--section-header-text-color)
+}
+
+.introTextContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.introText{
+  margin: 10px;
+  font-size: 18px;
+}
+
+
+
+.introTextGreeting{
+  color: var(--section-header-text-color);
+  margin: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.introDivRowComponent{
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+
+.projectsDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsRow{
+  display: flex;
+  flex-direction: row;
+}
+
+.projectsRowComponent{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.img{
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 15px;
+}
+
+.headerDiv{
+  width: 100%;
+}
+
+.imgBackgrounds {
+  background-color: #ffffff;
+  height: 350px;
+  width: 350px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 15px;
+}
+
+.imgBackgrounds:hover{
+  opacity: 0.9;
+  background-color: #575757;
+}
+
+.sectionDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--section-margin-top-spacing);
+  margin-bottom: var(--section-margin-bottom-spacing);
+  width: 100%;
+}
+.sectionHeaderText{
+  align-self: flex-start;
+  color: var(--section-header-text-color);
+  font-size: var(--section-header-font-size);
+}
+
+.sweGallery{
+  color: white;
+  background: rgb(138,147,147);
+  background: -moz-radial-gradient(circle, rgba(138,147,147,0.9990371148459384) 18%, rgba(188,194,214,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(138,147,147,0.9990371148459384) 18%, rgba(188,194,214,1) 100%);
+  background: radial-gradient(circle, rgba(138,147,147,0.9990371148459384) 18%, rgba(188,194,214,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8a9393",endColorstr="#bcc2d6",GradientType=1);
+}
+
+.hobbyGallery{
+  color: white;
+  background: rgb(63,94,251);
+  background: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(166,70,252,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(166,70,252,1) 100%);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(166,70,252,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#a646fc",GradientType=1);
+}
+
+.imgClass{
+  height: 200px;
+  width: 250px;
+}

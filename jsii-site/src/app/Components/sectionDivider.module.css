@@ -1,0 +1,35 @@
+.dividerContainer{
+    display: flex;
+    flex-direction: row;
+    height: var(--section-divider-height);
+    width: 100%;
+
+    margin-top: var(--section-divider-margin-top);
+    margin-bottom: var(--section-divider-margin-bottom);
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.firstDivider{
+    color: #06ef11;
+    padding: var(--section-divider-padding);
+    font-weight: var(--section-divider-font-weight);
+    font-size: var(--section-divider-font-size);
+}
+
+.secondDivider{
+    color: #588def;
+    padding: var(--section-divider-padding);
+    font-weight: var(--section-divider-font-weight);
+    font-size: var(--section-divider-font-size);
+}
+
+
+.thirdDivider{
+    color: #ff0000;
+    padding: var(--section-divider-padding);
+    font-weight: var(--section-divider-font-weight);
+    font-size: var(--section-divider-font-size);
+}
