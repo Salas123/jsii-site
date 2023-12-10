@@ -38,7 +38,7 @@ const ProjectSection = () =>{
             <ImageList
                 sx={{width: '90%', height: 600}}
                 gap={GetScreenSize().width <= 768 ? 10 : 5}
-                cols={GetScreenSize().width <= 768 ? 1 : 2}
+                cols={GetScreenSize().width <= 1080 ? 1 : 2}
             >
                 <ContentGalleryWithIcon data={sweData} style={styles.hobbyGallery}/>
             </ImageList>

@@ -70,10 +70,6 @@
   border-radius: 15px;
 }
 
-.headerDiv{
-  width: 100%;
-}
-
 .imgBackgrounds {
   background-color: #ffffff;
   height: 350px;
@@ -124,4 +120,10 @@
 .imgClass{
   height: 200px;
   width: 250px;
+}
+
+.headerMobileView{
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 25px;
 }

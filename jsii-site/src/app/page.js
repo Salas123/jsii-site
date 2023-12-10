@@ -2,22 +2,16 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Grid from '@mui/material/Unstable_Grid2';
 import SectionDivider from "@/app/Components/SectionDivider";
-import SocialIcons from "@/app/Components/SocialIcons";
 import ProjectSection from "@/app/Components/Sections/ProjectSection";
 import ContactMeSection from "@/app/Components/Sections/ContactMeSection";
 import InterestsSection from "@/app/Components/Sections/InterestsSection";
+import HeaderSection from "@/app/Components/Sections/HeaderSection";
 
 export default function Home() {
 
-
   return (
     <main className={styles.main}>
-        <div className={styles.headerDiv}>
-            <Grid container spacing={1}>
-                <Grid xs={12} sm={8} lg={10}><h1 className={styles.initialHeaderText}>JSII</h1></Grid>
-                <Grid sm={4} lg={2}><SocialIcons/></Grid>
-            </Grid>
-        </div>
+        <HeaderSection/>
         <div className={styles.sectionDiv}>
             <Grid container spacing={1}>
                 <Grid lg={7}>
