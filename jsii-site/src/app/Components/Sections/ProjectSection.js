@@ -9,14 +9,14 @@ const ProjectSection = () =>{
 
     const sweData = [
         {
-            img: '/ai-auto-release@0.5x.png',
+            img: '/ai-auto-release.png',
             title: 'AI Automated Release',
             photoDescription: 'DevOps Tool - OpenAI Powered Software Release Automation',
             linkToProject: 'https://github.com/Salas123/ai_automated_release',
             backgroundColor: "#ade3b1"
         },
         {
-            img:'/fantasy-app-img@0.5x.png',
+            img:'/fantasy-app-img.png',
             title: 'Fantasy Helper App',
             photoDescription: 'React Native App - Football Fantasy Helper',
             linkToProject: 'https://github.com/Salas123/ai_automated_release',
@@ -36,7 +36,7 @@ const ProjectSection = () =>{
         <div className={styles.sectionDiv}>
             <h1 className={styles.sectionHeaderText}>Projects</h1>
             <ImageList
-                sx={{width: '90%', height: 600}}
+                sx={{width: '85%', height: 600, padding: 5}}
                 gap={GetScreenSize().width <= 768 ? 10 : 5}
                 cols={GetScreenSize().width <= 1080 ? 1 : 2}
             >
@@ -47,3 +47,7 @@ const ProjectSection = () =>{
 }
 
 export default ProjectSection;
+
+/**
+ * TODO: Sections styles have to remove width:100% and header text remove alignment
+ * */
