@@ -1,3 +1,2 @@
-*.sh
-../build_and_test.sh
 /creds
+/scripts
