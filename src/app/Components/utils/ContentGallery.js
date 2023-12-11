@@ -1,6 +1,4 @@
-'use client'
 import { ImageListItem, ImageListItemBar} from "@mui/material";
-import styles from "@/app/page.module.css";
 
 const ContentGallery = ({...props}) => {
 
@@ -16,7 +14,7 @@ const ContentGallery = ({...props}) => {
                 title={item.title}
                 subtitle={<span>{item.photoDescription}</span>}
                 position='below'
-                className={styles.hobbyGallery}
+                sx={{color: 'white', background: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(166,70,252,1) 100%)'}}
                 />
         </ImageListItem>
     })
