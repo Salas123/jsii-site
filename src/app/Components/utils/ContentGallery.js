@@ -1,5 +1,5 @@
 import { ImageListItem, ImageListItemBar} from "@mui/material";
-
+import styles from "@/app/page.module.css";
 
 const ContentGallery = ({...props}) => {
 
@@ -15,7 +15,7 @@ const ContentGallery = ({...props}) => {
                 title={item.title}
                 subtitle={<span>{item.photoDescription}</span>}
                 position='below'
-                className={props.style}
+                className={styles.hobbyGallery}
                 />
         </ImageListItem>
     })

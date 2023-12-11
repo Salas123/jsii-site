@@ -99,15 +99,6 @@
   font-size: var(--section-header-font-size);
 }
 
-.sweGallery{
-  color: white;
-  background: rgb(138,147,147);
-  background: -moz-radial-gradient(circle, rgba(138,147,147,0.9990371148459384) 18%, rgba(188,194,214,1) 100%);
-  background: -webkit-radial-gradient(circle, rgba(138,147,147,0.9990371148459384) 18%, rgba(188,194,214,1) 100%);
-  background: radial-gradient(circle, rgba(138,147,147,0.9990371148459384) 18%, rgba(188,194,214,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8a9393",endColorstr="#bcc2d6",GradientType=1);
-}
-
 .hobbyGallery{
   color: white;
   background: rgb(63,94,251);

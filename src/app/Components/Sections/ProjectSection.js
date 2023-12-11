@@ -1,9 +1,9 @@
 'use client'
 import * as React from 'react';
-import styles from "@/app/page.module.css";
 import {ImageList} from "@mui/material";
 import ContentGalleryWithIcon from "@/app/Components/utils/ContentGalleryWithIcon";
 import GetScreenSize from "@/app/Components/utils/GetScreenSize";
+import styles from "@/app/page.module.css";
 
 const ProjectSection = () =>{
 
@@ -40,7 +40,7 @@ const ProjectSection = () =>{
                 gap={GetScreenSize().width <= 768 ? 10 : 5}
                 cols={GetScreenSize().width <= 1080 ? 1 : 2}
             >
-                <ContentGalleryWithIcon data={sweData} style={styles.hobbyGallery}/>
+                <ContentGalleryWithIcon data={sweData}/>
             </ImageList>
         </div>
     );

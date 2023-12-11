@@ -3,6 +3,7 @@ import * as React from "react";
 import {IconButton, ImageListItem, ImageListItemBar, Popover, Typography} from "@mui/material";
 import LinkIcon from "@mui/icons-material/Link";
 import Link from "next/link";
+import styles from "@/app/page.module.css";
 
 const ContentGalleryWithIcon = ({...props}) => {
     const [anchorEl, setAnchorEl] = React.useState(false);
@@ -51,7 +52,7 @@ const ContentGalleryWithIcon = ({...props}) => {
                 title={item.title}
                 subtitle={<span>{item.photoDescription}</span>}
                 position='below'
-                className={props.style}
+                className={styles.hobbyGallery}
                 actionIcon={
                     <IconButton
                         sx={{ color: 'rgba(255,255,255,0.96)'}}
