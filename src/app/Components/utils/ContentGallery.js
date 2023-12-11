@@ -1,6 +1,5 @@
 import { ImageListItem, ImageListItemBar} from "@mui/material";
 
-
 const ContentGallery = ({...props}) => {
 
     return props.data.map( (item) => {
@@ -15,7 +14,7 @@ const ContentGallery = ({...props}) => {
                 title={item.title}
                 subtitle={<span>{item.photoDescription}</span>}
                 position='below'
-                className={props.style}
+                sx={{color: 'white', background: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(166,70,252,1) 100%)'}}
                 />
         </ImageListItem>
     })

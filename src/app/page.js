@@ -30,7 +30,7 @@ export default function Home() {
                             I am a proud UC Riverside graduate where I gained my B.S. in Computer Science.
                             I am currently exploring opportunities in Fullstack Software Engineering and in DevOps.
                             I also like to dabble in the multimedia field as I enjoy being an avid videographer/photographer.
-                            I am always open to collaborating on anything, so please don't hesistate to reach out.
+                            I am always open to collaborating on anything, so please don&apos;t hesistate to reach out.
                         </p>
                         <p className={styles.introText}>All the best!</p>
                     </div>

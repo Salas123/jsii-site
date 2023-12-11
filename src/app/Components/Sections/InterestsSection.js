@@ -1,6 +1,6 @@
 'use client'
-import styles from "@/app/page.module.css";
 import {ImageList} from "@mui/material";
+import styles from "@/app/page.module.css";
 import ContentGallery from "@/app/Components/utils/ContentGallery";
 import GetScreenSize from "@/app/Components/utils/GetScreenSize";
 
@@ -63,7 +63,7 @@ const InterestsSection = () => {
               gap={GetScreenSize().width <= 768 ? 10: 5}
               cols={GetScreenSize().width <= 768 ? 1 : 3}
           >
-              <ContentGallery data={hobbyData} style={styles.hobbyGallery}/>
+              <ContentGallery data={hobbyData}/>
           </ImageList>
       </div>
   )
