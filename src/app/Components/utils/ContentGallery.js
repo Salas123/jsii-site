@@ -1,3 +1,4 @@
+'use client'
 import { ImageListItem, ImageListItemBar} from "@mui/material";
 import styles from "@/app/page.module.css";
 
