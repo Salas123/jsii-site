@@ -5,28 +5,37 @@ import LinkIcon from "@mui/icons-material/Link";
 import Link from "next/link";
 
 const ContentGalleryWithIcon = ({...props}) => {
-    const [anchorEl, setAnchorEl] = React.useState(false);
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-        console.log('pressed!')
+    let dataElMap = {};
+    for(let i= 0; i < props.data.length; i++)
+        dataElMap[`el_${i}`] = null;
+
+    const [anchorEls, setAnchorEls] = React.useState(dataElMap);
+
+    const handleClick = ({...props}) => {
+        let temp = {}
+        temp[props.index_str] = props.target
+        setAnchorEls({...anchorEls, ...temp});
     };
 
-    const handleClose = () => {
-        setAnchorEl(false);
+    const handleClose = (index) => {
+        let temp = {}
+        temp[index] = null;
+        setAnchorEls({...anchorEls, ...temp});
     };
 
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
 
-
-    return props.data.map( (item) => {
-        return <ImageListItem key={item.img}>
+    return props.data.map( (item, index) => {
+        const index_str = `el_${index}`;
+        const id = Boolean(anchorEls[index_str]) ? 'simple-popover' : undefined
+        return(<ImageListItem
+                key={item.img}
+            >
             <Popover
                 id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
+                open={Boolean(anchorEls[index_str])}
+                anchorEl={anchorEls[index_str]}
+                onClose={() => handleClose(index_str)}
                 anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'left',
@@ -56,13 +65,14 @@ const ContentGalleryWithIcon = ({...props}) => {
                     <IconButton
                         sx={{ color: 'rgba(255,255,255,0.96)'}}
                         aria-label={'info here'}
-                        onClick={ (event) => handleClick(event)}
+                        onClick={ (event) => handleClick({index_str: index_str, target: event.currentTarget})}
                     >
                         <LinkIcon fontSize={'large'}/>
                     </IconButton>
                 }
             />
         </ImageListItem>
+        )
     })
 }
 
