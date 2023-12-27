@@ -38,6 +38,10 @@ const ProjectSection = () =>{
         }
     ]
 
+    /**
+     *  TODO: Try same content gallery that interests has
+     * */
+
 
     return (
         <div className={styles.sectionDiv}>
@@ -55,6 +59,3 @@ const ProjectSection = () =>{
 
 export default ProjectSection;
 
-/**
- * TODO: Sections styles have to remove width:100% and header text remove alignment
- * */

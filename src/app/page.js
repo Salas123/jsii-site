@@ -9,9 +9,18 @@ import HeaderSection from "@/app/Components/Sections/HeaderSection";
 
 export default function Home() {
 
+    /**
+     *  TODO: Add a navigation pane through sections
+     *
+     * */
+
+
   return (
     <main className={styles.main}>
         <HeaderSection/>
+        {/**
+            TODO: Modularize intro section into it sections directory
+         */}
         <div className={styles.sectionDiv}>
             <Grid container spacing={1}>
                 <Grid lg={7}>
