@@ -1,5 +1,5 @@
 name: feature-test-development-workflow
-on: 
+on:
   push:
     branches:
       - feature/*
@@ -18,6 +18,8 @@ jobs:
       - name: Verify Heroku installation
         run: |
           heroku --version
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       - name: List all apps found on Heroku
         run: |
           heroku apps --all
