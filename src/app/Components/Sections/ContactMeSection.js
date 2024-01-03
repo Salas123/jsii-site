@@ -4,9 +4,11 @@ import {alpha, Box, Button, createTheme, getContrastRatio, Stack, TextField, The
 import Grid from "@mui/material/Unstable_Grid2";
 import SendIcon from '@mui/icons-material/Send';
 import ClearIcon from '@mui/icons-material/Clear';
+import SlackMessageFormat from "@/app/Components/utils/SlackMessageFormat";
 import {useState} from "react";
 
 const ContactMeSection = () => {
+
 
     const violetBase = '#0a0ef6';
     const violetMain = alpha(violetBase, 0.7);
@@ -22,12 +24,40 @@ const ContactMeSection = () => {
     })
 
     const [emailForm, setEmailForm] = useState({
-        firstNameInput: undefined,
-        lastNameInput: undefined,
-        subjectInput: undefined,
-        emailInput: undefined,
-        messageInput: undefined
+        firstNameInput: '',
+        lastNameInput: '',
+        subjectInput: '',
+        emailInput: '',
+        messageInput: ''
     })
+
+
+    const sendMessage = async () =>{
+
+            if(!emailForm.firstNameInput || !emailForm.lastNameInput || !emailForm.subjectInput || !emailForm.emailInput || !emailForm.messageInput)
+            {
+                alert('All form fields must be filled...');
+                return;
+            }
+
+            const slackMessage =  SlackMessageFormat.returnMessageObj({
+                fullName: `${emailForm.firstNameInput} ${emailForm.lastNameInput}`,
+                subject: emailForm.subjectInput,
+                email: emailForm.emailInput,
+                message: emailForm.messageInput
+            })
+
+
+            console.log(slackMessage)
+
+            const slackResponse = await fetch(process.env.NEXT_PUBLIC_SLACK_WEBHOOK,{
+                method: "POST",
+                body: JSON.stringify(slackMessage)
+            });
+
+            console.log(`Response from Slack webhook: ${slackResponse.status} -- ${slackResponse.ok ? 'Ok' : slackResponse.statusText}`);
+    }
+
 
   return(
       <div className={styles.sectionDiv}>
@@ -113,7 +143,7 @@ const ContactMeSection = () => {
                       container>
                       <Grid lg={12}>
                           <TextField
-                              id={"messageInput"}
+                              id="messageInput"
                               label={"Message"}
                               variant={"outlined"}
                               multiline
@@ -126,10 +156,16 @@ const ContactMeSection = () => {
                   </Grid>
               </Box>
               <Stack direction={"row"} spacing={2}>
-                  <Button variant={'outlined'} color={'primary'} endIcon={<SendIcon/>}>
+                  <Button variant={'outlined'} color={'primary'} endIcon={<SendIcon/>} onClick={async () => await sendMessage()}>
                       Send
                   </Button>
-                  <Button variant={'outlined'} color={'primary'} endIcon={<ClearIcon/>}>
+                  <Button variant={'outlined'} color={'primary'} endIcon={<ClearIcon/>}  onClick={() => setEmailForm({
+                      firstNameInput: '',
+                      lastNameInput: '',
+                      subjectInput: '',
+                      emailInput: '',
+                      messageInput: ''
+                  })}>
                       Clear
                   </Button>
               </Stack>
