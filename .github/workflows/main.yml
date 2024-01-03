@@ -1,24 +1,22 @@
 name: feature-test-development-workflow
-on: 
+on:
   push:
     branches:
       - feature/*
+      - develop
 jobs:
-  build:
-    name: build
+
+  lint:
+    name: lint
     runs-on: macos-latest
     steps:
-      - name: Check out to develop repo code
+      - name: Checking out to working branch...
         uses: actions/checkout@v4
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
         with:
-          ref: develop
-      - name: Install Heroku CLI
-        run: |
-          brew tap heroku/brew && brew install heroku
-      - name: Verify Heroku installation
-        run: |
-          heroku --version
-      - name: List all apps found on Heroku
-        run: |
-          heroku apps --all
-    
+          node-version: '18.18.0'
+      - run: npm i eslint-config-next
+      - run: npm init @eslint/config
+      - run: npx eslint ./
+

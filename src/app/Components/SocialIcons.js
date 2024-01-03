@@ -11,6 +11,7 @@ const SocialIcons = () => {
         alert('Downloading resume, please wait!');
         const response = await fetch(process.env.NEXT_PUBLIC_LAMBDA_GOOGLE_URL);
         const payload = JSON.parse(await response.json());
+        console.log(`Response status from AWS API Gateway: ${response.status} -- ${response.statusText}`)
         const buff = Buffer.from(payload.buffer.data, 'binary');
 
         const blob = new Blob([buff], {type: 'application/pdf'});
@@ -49,6 +50,10 @@ const SocialIcons = () => {
 
     const inlinePaddingStyle = 3;
 
+
+    /**
+     *  TODO: Fix social icon margins
+     * */
 
   return (
       <div className={styles.iconsContainer}>
