@@ -1,0 +1,22 @@
+name: environment-workflow
+on:
+  pull_request:
+    branches:
+      - develop
+      - prod
+jobs:
+  test:
+    name: test-endpoints
+    runs-on: macos-latest
+    steps:
+      - name: Checking out to working branch...
+        uses: actions/checkout@v4
+      - name: Setting up Python env...
+        uses: actions/setup-python@v4
+      - name: Installing dependencies...
+        run: cd test/ && pip install -r requirements.txt
+      - name: Running pytest framework and exporting test results...
+        env:
+          DRIVE_LAMBDA_URL: ${{ secrets.DRIVE_LAMBDA_URL }}
+          SITE_WEBHOOK_URL: ${{ secrets.SITE_WEBHOOK_URL }}
+        run: cd test && pytest -v --log-cli-level=DEBUG testEndpoints/*.py
