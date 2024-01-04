@@ -20,3 +20,15 @@ jobs:
       - run: npm init @eslint/config
       - run: npx eslint ./
 
+  test:
+    name: test-endpoints
+    runs-on: macos-latest
+    steps:
+      - name: Checking out to working branch...
+        uses: actions/checkout@v4
+      - name: Setting up Python env...
+        uses : actions/setup-python@v4
+      - name: Installing dependencies...
+        run: cd test/ && pip install -r requirements.txt
+      - name: Running pytest framework and exporting test results...
+        run: pytest --log-cli-level=DEBUG -v testEndpoints/*.py
