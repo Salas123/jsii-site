@@ -20,9 +20,8 @@ def slack_webhook_url():
 
 @pytest.fixture
 def resume_obj():
-    abs_path = os.path.abspath('testEndpoints.py')
+    abs_path = os.path.abspath('.')
     path_comps = abs_path.split('/')
-    path_comps = path_comps[: len(path_comps) - 1]
     # added path to actual resume for comparison
     path_comps.append('artifacts')
     path_comps.append('Resume.pdf')
