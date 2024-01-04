@@ -1,0 +1,20 @@
+name: feature-test-development-workflow
+on:
+  push:
+    branches:
+      - feature/*
+jobs:
+
+  lint:
+    name: lint
+    runs-on: macos-latest
+    steps:
+      - name: Checking out to working branch...
+        uses: actions/checkout@v4
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.18.0'
+      - run: npm i eslint-config-next
+      - run: npm init @eslint/config
+      - run: npx eslint ./
