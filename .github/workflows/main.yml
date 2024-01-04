@@ -33,6 +33,6 @@ jobs:
         run: cd test/ && pip install -r requirements.txt
       - name: Running pytest framework and exporting test results...
         env:
-          DRIVE_LAMBDA_URL: $ {{ secrets.DRIVE_LAMBDA_URL }}
-          SITE_WEBHOOK_URL: $ {{ secrets.SITE_WEBHOOK_URL }}
+          DRIVE_LAMBDA_URL: ${{ secrets.DRIVE_LAMBDA_URL }}
+          SITE_WEBHOOK_URL: ${{ secrets.SITE_WEBHOOK_URL }}
         run: pytest --log-cli-level=DEBUG -v test/testEndpoints/*.py
