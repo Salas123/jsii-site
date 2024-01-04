@@ -35,4 +35,4 @@ jobs:
         env:
           DRIVE_LAMBDA_URL: ${{ secrets.DRIVE_LAMBDA_URL }}
           SITE_WEBHOOK_URL: ${{ secrets.SITE_WEBHOOK_URL }}
-        run: pwd
+        run: ls
