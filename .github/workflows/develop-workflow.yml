@@ -5,6 +5,20 @@ on:
       - develop
       - prod
 jobs:
+  unit-test:
+    name: unit-test
+    runs-on: macos-latest
+    needs: [ lint ]
+    steps:
+      - name: Checking out to working branch...
+        uses: actions/checkout@v4
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.18.0'
+      - run: npm install
+      - run: npm test
+
   test:
     name: test-endpoints
     runs-on: macos-latest
