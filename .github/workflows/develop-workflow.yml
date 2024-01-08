@@ -17,6 +17,11 @@ jobs:
           node-version: '18.18.0'
       - run: npm install
       - run: npm test
+      - name: Uploading code coverage results...
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: coverage/clover.xml
 
   python-test:
     name: test-endpoints

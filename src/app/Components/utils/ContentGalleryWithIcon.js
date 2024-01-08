@@ -30,6 +30,7 @@ const ContentGalleryWithIcon = ({...props}) => {
         const id = Boolean(anchorEls[index_str]) ? 'simple-popover' : undefined
         return(<ImageListItem
                 key={item.img}
+                cols={2}
             >
             <Popover
                 id={id}
@@ -50,8 +51,8 @@ const ContentGalleryWithIcon = ({...props}) => {
                 </Typography>
             </Popover>
             <img
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=250&h=200&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=250&h=200&fit=crop&auto=format`}
                 alt={item.title}
                 loading="lazy"
                 style={{backgroundColor: item.backgroundColor}}
