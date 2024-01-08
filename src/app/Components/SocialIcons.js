@@ -50,11 +50,6 @@ const SocialIcons = () => {
 
     const inlinePaddingStyle = 3;
 
-
-    /**
-     *  TODO: Fix social icon margins
-     * */
-
   return (
       <div className={styles.iconsContainer}>
           {/*
